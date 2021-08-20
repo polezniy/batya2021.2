@@ -12,8 +12,18 @@ public class AttackController : MonoBehaviour
     public float attackDelay = 1f;
 
 
+    Collider[] colliders;
+
     public void Hit()
     {
-       // colliders = Physics.OverlapSphere(hitTarget.position, 
+        // Сюда засунуть срабатывание звука удара
+
+        colliders = Physics.OverlapSphere(hitTarget.position, 0.7f);
+
+        // Удар происходит только по объектам с тегом "Enemy"
+        foreach (Collider item in colliders)
+        {
+            if (item.CompareTag("Enemy")) item.GetComponent<Health>().Value -= 1f;
+        }
     }
 }

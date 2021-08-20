@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MoveController : MonoBehaviour
     public CharacterController characterController;
     public Transform groundChecker;
     public LayerMask groundMask;
+    public GameObject model;             // Это дочерний объект самого префаба
 
     [Header("Settings")]
     public float groundCheckRadius;
@@ -21,6 +23,11 @@ public class MoveController : MonoBehaviour
     bool onGround;
     float xMovement, yMovement;
 
+
+    private void Awake()
+    {
+        StartCoroutine(AngleControl());
+    }
 
     private void Update()
     {
@@ -43,7 +50,17 @@ public class MoveController : MonoBehaviour
         yMovement += gravity * Time.deltaTime;
         movementVector.y = yMovement;
         characterController.Move(movementVector * Time.deltaTime);
+    }
 
+    IEnumerator AngleControl()
+    {
+        WaitForSeconds delay = new WaitForSeconds(0.1f);
 
+        while(true)
+        {
+            // Поворот модельки влево или вправо в зависимости от направления движения
+            //if (xMovement > 0f) LeanTween.rotateY(model, )
+            yield return delay;
+        }
     }
 }

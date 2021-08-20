@@ -69,6 +69,7 @@
     <Compile Include="Assets\Code\Entity.cs" />
     <Compile Include="Assets\Code\GameController.cs" />
     <Compile Include="Assets\Code\GameData.cs" />
+    <Compile Include="Assets\Code\Health.cs" />
     <Compile Include="Assets\Code\Interactable.cs" />
     <Compile Include="Assets\Code\MoveController.cs" />
     <Compile Include="Assets\Code\NextLevel.cs" />
