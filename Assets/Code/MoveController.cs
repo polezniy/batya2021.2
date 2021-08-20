@@ -60,7 +60,8 @@ public class MoveController : MonoBehaviour
         while(true)
         {
             // Поворот модельки влево или вправо в зависимости от направления движения
-            LeanTween.rotateY(model, xMovement > 0f ? 1f : 179f, delayTime);
+            if (xMovement > 0.01f) LeanTween.rotateY(model, 1f, delayTime);
+            if (xMovement < -0.01f) LeanTween.rotateY(model, 179f, delayTime);
             yield return delay;
         }
     }
