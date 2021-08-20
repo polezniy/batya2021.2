@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
 
             if (Input.GetAxis("Jump") > 0) jump = true;
+
+            if (Input.GetMouseButtonDown(0)) entity.AttackController.Hit();
         }
 
         if (Input.GetKeyDown(KeyCode.F)) entity.ShelterActor.Interact();

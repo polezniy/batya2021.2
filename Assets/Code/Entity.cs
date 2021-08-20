@@ -9,10 +9,12 @@ public class Entity : MonoBehaviour
     [SerializeField] PlayerController playerController;
     [SerializeField] CollisionHandler collisionHandler;
     [SerializeField] ShelterActor shelterActor;
+    [SerializeField] AttackController attackController;
 
     public CharacterController CharacterController => characterController;
     public MoveController MoveController => moveController;
     public PlayerController PlayerController => playerController;
     public CollisionHandler CollisionHandler => collisionHandler;
     public ShelterActor ShelterActor => shelterActor;
+    public AttackController AttackController => attackController;
 }
