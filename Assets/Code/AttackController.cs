@@ -23,7 +23,12 @@ public class AttackController : MonoBehaviour
         // Удар происходит только по объектам с тегом "Enemy"
         foreach (Collider item in colliders)
         {
-            if (item.CompareTag("Enemy")) item.GetComponent<Health>().Value -= 1f;
+            Debug.Log("tag = " + item.tag);
+            if (item.CompareTag("Enemy")) 
+            {
+                Health health = item.GetComponent<Health>();
+                if (health != null) health.Value -= 1f; 
+            }
         }
     }
 }

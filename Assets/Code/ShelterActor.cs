@@ -34,7 +34,7 @@ public class ShelterActor : MonoBehaviour
         inShelter = true;
         entity.MoveController.enabled = false;
         LeanTween.cancelAll();
-        LeanTween.moveLocalZ(gameObject, 2f, enterDuration);
+        LeanTween.moveLocalZ(gameObject, 7f, enterDuration);
         yield return new WaitForSeconds(enterDuration);
     }
 

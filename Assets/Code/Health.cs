@@ -10,12 +10,17 @@ public class Health : MonoBehaviour
     [Header("Info")]
     [SerializeField] float healthValue;
 
+    private void Awake()
+    {
+        healthValue = maxHealth;
+    }
+
     public float Value
     {
         get => healthValue;
         set
         {
-            healthValue += value;
+            healthValue = value;
             if (healthValue <= 0f) Die();
         }
     }

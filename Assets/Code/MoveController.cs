@@ -54,12 +54,13 @@ public class MoveController : MonoBehaviour
 
     IEnumerator AngleControl()
     {
-        WaitForSeconds delay = new WaitForSeconds(0.1f);
+        float delayTime = 0.1f;
+        WaitForSeconds delay = new WaitForSeconds(delayTime);
 
         while(true)
         {
             // Поворот модельки влево или вправо в зависимости от направления движения
-            //if (xMovement > 0f) LeanTween.rotateY(model, )
+            LeanTween.rotateY(model, xMovement > 0f ? 1f : 179f, delayTime);
             yield return delay;
         }
     }

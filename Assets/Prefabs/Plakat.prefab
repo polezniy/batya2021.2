@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8984518187980167002}
   - component: {fileID: 6863536829733760814}
   - component: {fileID: 4942694519983386015}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Plakat
   m_TagString: Interactable
   m_Icon: {fileID: 0}

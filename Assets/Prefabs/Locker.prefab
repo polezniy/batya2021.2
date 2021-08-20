@@ -138,8 +138,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59, y: 2.710041, z: 5.31}
-  m_Center: {x: -0.049809664, y: 1.1961126, z: 0}
+  m_Size: {x: 0.59, y: 5.3204603, z: 5.31}
+  m_Center: {x: -0.049809664, y: -0.109097004, z: 0}
 --- !u!114 &379970329295240076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +170,4 @@ MonoBehaviour:
   playerController: {fileID: 0}
   collisionHandler: {fileID: 0}
   shelterActor: {fileID: 0}
+  attackController: {fileID: 0}

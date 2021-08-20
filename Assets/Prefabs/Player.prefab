@@ -66,7 +66,6 @@ Transform:
   m_Children:
   - {fileID: 8264323787728345173}
   - {fileID: 8264323786445452876}
-  - {fileID: 8258430302129701493}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,12 +124,12 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
-  model: {fileID: 0}
+  model: {fileID: 8264323787728345172}
   groundCheckRadius: 0.3
-  movementSpeed: 12
-  jumpStrength: 15
-  gravity: -25
-  controlByPlayer: 0
+  movementSpeed: 10
+  jumpStrength: 12
+  gravity: -40
+  controlByPlayer: 1
 --- !u!114 &8500678180760800852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,12 +213,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278644737354974228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.998, y: 1.001, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.998, y: -0.030999899, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8264323786551568348}
-  m_RootOrder: 2
+  m_Father: {fileID: 8264323787728345173}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9159179991652553492
 PrefabInstance:
@@ -232,6 +231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291136, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 984941545768291137, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}
@@ -288,8 +292,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a5320b5e969bb4d8998b9eabdc7e42, type: 3}
+--- !u!1 &8264323787728345172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984941545768291136, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+    type: 3}
+  m_PrefabInstance: {fileID: 9159179991652553492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8264323787728345173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 984941545768291137, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
