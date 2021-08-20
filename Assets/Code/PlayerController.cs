@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private int health = 3;
+    private bool interaction;
+    private GameObject target;
+
+    public int domination;
+
     [Header("Entity")]
     public Entity entity;
 
@@ -13,9 +20,19 @@ public class PlayerController : MonoBehaviour
     public float HorizontalInput { get => horizontalInput; }
     public bool Jump { get => jump; set { jump = value; } }
 
-
-    private void Update()
+    void Update()
     {
+        // Обновление статов игрока
+        GameData.current.health = health;
+        GameData.current.domination = domination;
+
+        // Взаимодействие с интерактивными объектами
+        if (Input.GetMouseButtonDown(1) && interaction && target.GetComponent<Interactable>().used == false)
+        {
+            domination += target.GetComponent<Interactable>().domination;
+            target.GetComponent<Interactable>().used = true;
+        }
+
         if (!entity.ShelterActor.InShelter)
         {
             horizontalInput = Input.GetAxis("Horizontal");
@@ -25,6 +42,27 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F)) entity.ShelterActor.Interact();
     }
-}
 
-public delegate void SimpleEventHandler();
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("HealthKit")) // Подбирание аптечки
+        {
+            Destroy(other.gameObject);
+            if (health < 3) health++;
+        }
+
+        if (other.CompareTag("Interactable")) // Взаимодействие с объектами
+        {
+            interaction = true;
+            target = other.gameObject;
+
+        }
+        else
+        {
+            interaction = false;
+            Destroy(target);
+        }
+    }
+
+    public delegate void SimpleEventHandler();
+}
