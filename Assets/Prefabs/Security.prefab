@@ -42,13 +42,13 @@ GameObject:
   - component: {fileID: 564431331886875438}
   - component: {fileID: 8264323786551568351}
   - component: {fileID: 8264323786551568350}
-  - component: {fileID: 8500678180760800852}
   - component: {fileID: 4820220077475407126}
-  - component: {fileID: 7251973387055834459}
   - component: {fileID: 6039082851139316905}
+  - component: {fileID: 1570438009269328145}
+  - component: {fileID: 7021081733658082176}
   m_Layer: 8
-  m_Name: Player
-  m_TagString: Player
+  m_Name: Security
+  m_TagString: Enemy
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,11 +83,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 8264323786551568351}
   moveController: {fileID: 8264323786551568350}
-  playerController: {fileID: 8500678180760800852}
+  playerController: {fileID: 0}
   collisionHandler: {fileID: 4820220077475407126}
-  shelterActor: {fileID: 7251973387055834459}
+  shelterActor: {fileID: 0}
   attackController: {fileID: 6039082851139316905}
-  ai: {fileID: 0}
+  ai: {fileID: 7021081733658082176}
 --- !u!143 &8264323786551568351
 CharacterController:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 564431331886875438}
-  playerController: {fileID: 8500678180760800852}
+  playerController: {fileID: 0}
   characterController: {fileID: 8264323786551568351}
   groundChecker: {fileID: 8264323786445452876}
   groundMask:
@@ -127,26 +127,11 @@ MonoBehaviour:
     m_Bits: 512
   model: {fileID: 8264323787728345172}
   groundCheckRadius: 0.3
-  movementSpeed: 10
-  jumpStrength: 12
-  gravity: -40
-  controlByPlayer: 1
-  controlByAI: 0
---- !u!114 &8500678180760800852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264323786551568345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1a6fc7cfff7884cac0497d67d7f2b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  domination: 0
-  entity: {fileID: 564431331886875438}
+  movementSpeed: 6
+  jumpStrength: 10
+  gravity: -25
+  controlByPlayer: 0
+  controlByAI: 1
 --- !u!114 &4820220077475407126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,20 +148,6 @@ MonoBehaviour:
   shelterMask:
     serializedVersion: 2
     m_Bits: 1024
---- !u!114 &7251973387055834459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264323786551568345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d96cc9d0564400e41841380b37ab1bc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entity: {fileID: 564431331886875438}
-  enterDuration: 0.5
 --- !u!114 &6039082851139316905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +165,35 @@ MonoBehaviour:
   damage: 1
   attackDelay: 1
   swingDelay: 0.3
+--- !u!114 &1570438009269328145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4d9d81234bffb429c216656f93425a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 999
+  healthValue: 0
+--- !u!114 &7021081733658082176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131119919c77e604094fab5af2d980fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 564431331886875438}
+  enemyType: 2
+  patrolPoints: []
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ PrefabInstance:
     - target: {fileID: 984941545768291136, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 984941545768291136, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}
@@ -306,6 +306,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291167, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ec5a6a3ba83b1a4aa63a496d1859011, type: 2}
     - target: {fileID: 1103235205587165602, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}
       propertyPath: m_Layer

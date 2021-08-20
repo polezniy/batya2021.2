@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\AI.cs" />
     <Compile Include="Assets\Code\AttackController.cs" />
     <Compile Include="Assets\Code\CollisionHandler.cs" />
     <Compile Include="Assets\Code\Entity.cs" />
@@ -110,14 +111,14 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Projects/Unity/batya2021.2/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:/Projects/Unity/batya2021.2/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Projects/Unity/batya2021.2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Projects/Unity/batya2021.2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Projects/Unity/batya2021.2/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

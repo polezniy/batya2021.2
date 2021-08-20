@@ -10,6 +10,7 @@ public class Entity : MonoBehaviour
     [SerializeField] CollisionHandler collisionHandler;
     [SerializeField] ShelterActor shelterActor;
     [SerializeField] AttackController attackController;
+    [SerializeField] AI ai;
 
     public CharacterController CharacterController => characterController;
     public MoveController MoveController => moveController;
@@ -17,4 +18,5 @@ public class Entity : MonoBehaviour
     public CollisionHandler CollisionHandler => collisionHandler;
     public ShelterActor ShelterActor => shelterActor;
     public AttackController AttackController => attackController;
+    public AI AI => ai;
 }

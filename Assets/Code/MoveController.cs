@@ -19,6 +19,7 @@ public class MoveController : MonoBehaviour
     public float jumpStrength = 15f;
     public float gravity = -25f;
     public bool controlByPlayer = true;
+    public bool controlByAI = false;
 
     bool onGround;
     float xMovement, yMovement;
@@ -44,6 +45,11 @@ public class MoveController : MonoBehaviour
                     playerController.Jump = false;
             }
             xMovement = playerController.HorizontalInput * movementSpeed;
+        }
+
+        if (controlByAI)
+        {
+            xMovement = entity.AI.HorizontalMoving * movementSpeed;
         }
 
         Vector3 movementVector = new Vector3(xMovement, 0f, 0f);
