@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
         domination.text = "Domination: " + GameData.current.domination;
         health.text = "Health: " + GameData.current.health;
 
+        // Уничтожает препятствие перед лестницей, когда игрок достиг 20 доминации
         if(GameData.current.domination >= 20)
         {
             Destroy(block);
