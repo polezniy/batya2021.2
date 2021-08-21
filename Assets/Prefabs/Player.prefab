@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4820220077475407126}
   - component: {fileID: 7251973387055834459}
   - component: {fileID: 6039082851139316905}
+  - component: {fileID: 4704308950735677690}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -194,6 +195,22 @@ MonoBehaviour:
   damage: 1
   attackDelay: 1
   swingDelay: 0.3
+--- !u!114 &4704308950735677690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4d9d81234bffb429c216656f93425a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStoresInGameData: 1
+  maxHealth: 3
+  dominationReward: 0
+  healthValue: 0
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0

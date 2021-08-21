@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("Settings")]
+    [SerializeField] bool healthStoresInGameData;
     [SerializeField] float maxHealth;
     [SerializeField] int dominationReward = 1;
 
@@ -18,11 +19,24 @@ public class Health : MonoBehaviour
 
     public float Value
     {
-        get => healthValue;
+        get
+        {
+            if (healthStoresInGameData) return GameData.current.health;
+            else return healthValue;
+        }
         set
         {
-            healthValue = value;
-            if (healthValue <= 0f) Die();
+            if (healthStoresInGameData)
+            {
+                GameData.current.health = (int)value;
+                if (GameData.current.health <= 0f) Die();
+                // Экран смерти
+            }
+            else
+            {
+                healthValue = value;
+                if (healthValue <= 0f) Die();
+            }
         }
     }
 

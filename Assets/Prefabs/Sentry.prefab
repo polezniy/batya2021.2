@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5166016767689936214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7815566161543657946}
+  - component: {fileID: 2712779377111885799}
+  - component: {fileID: 3002703981570462234}
+  m_Layer: 8
+  m_Name: Collisions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7815566161543657946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166016767689936214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8264323787728345173}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2712779377111885799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166016767689936214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.007263, y: 1.021381, z: 1}
+  m_Center: {x: 1.4913385, y: 0.4596966, z: 0}
+--- !u!114 &3002703981570462234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166016767689936214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d777de775d05b05458f189f817d68456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8264323786445452879
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,8 +102,7 @@ GameObject:
   - component: {fileID: 4820220077475407126}
   - component: {fileID: 6039082851139316905}
   - component: {fileID: 1570438009269328145}
-  - component: {fileID: 1932640913942404747}
-  - component: {fileID: 7844311840675102009}
+  - component: {fileID: 4466687127393124340}
   m_Layer: 8
   m_Name: Sentry
   m_TagString: Enemy
@@ -88,7 +144,7 @@ MonoBehaviour:
   collisionHandler: {fileID: 4820220077475407126}
   shelterActor: {fileID: 0}
   attackController: {fileID: 6039082851139316905}
-  ai: {fileID: 0}
+  ai: {fileID: 4466687127393124340}
 --- !u!143 &8264323786551568351
 CharacterController:
   m_ObjectHideFlags: 0
@@ -132,7 +188,7 @@ MonoBehaviour:
   jumpStrength: 10
   gravity: -25
   controlByPlayer: 0
-  controlByAI: 0
+  controlByAI: 1
 --- !u!114 &4820220077475407126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,22 +234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4d9d81234bffb429c216656f93425a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthStoresInGameData: 0
   maxHealth: 2
+  dominationReward: 1
   healthValue: 0
---- !u!65 &1932640913942404747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264323786551568345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.318968, y: 1, z: 1}
-  m_Center: {x: 1.8312216, y: 1.5, z: 0}
---- !u!114 &7844311840675102009
+--- !u!114 &4466687127393124340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,9 +247,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8264323786551568345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d777de775d05b05458f189f817d68456, type: 3}
+  m_Script: {fileID: 11500000, guid: 131119919c77e604094fab5af2d980fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entity: {fileID: 564431331886875438}
+  enemyType: 0
+  patrolPoints: []
+  target: {fileID: 0}
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +370,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec5a6a3ba83b1a4aa63a496d1859011, type: 2}
+      objectReference: {fileID: 2100000, guid: b064675e3ebb50a4a8dd9e29865e93a0, type: 2}
     - target: {fileID: 1103235205587165602, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}
       propertyPath: m_Layer

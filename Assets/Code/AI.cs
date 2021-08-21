@@ -11,11 +11,13 @@ public class AI : MonoBehaviour
     [SerializeField] EnemyType enemyType;
     [SerializeField] Transform[] patrolPoints;
 
+    [Header("Info")]
     float horizontalMoving;
     public Entity target;
     Coroutine currentAlgorithm;
     int currentPatrolPointIndex;
     Transform currentPatrolPoint;
+    Vector3 spawnCoordinates;
     const float tickTime = 0.1f;
     WaitForSeconds tick = new WaitForSeconds(tickTime);
 
@@ -25,6 +27,7 @@ public class AI : MonoBehaviour
     private void Awake()
     {
         if (patrolPoints != null && patrolPoints.Length > 0) currentPatrolPoint = patrolPoints[0];
+        spawnCoordinates = transform.position;
         DefineBehaviour();
     }
 
@@ -35,6 +38,7 @@ public class AI : MonoBehaviour
         switch (enemyType)
         {
             case EnemyType.SENTRY:
+                currentAlgorithm = StartCoroutine(SentrySequence());
                 break;
             case EnemyType.STRONGSENTRY:
                 break;
@@ -60,7 +64,7 @@ public class AI : MonoBehaviour
         currentPatrolPoint = patrolPoints[currentPatrolPointIndex];
     }
 
-    public IEnumerator GoToPoint(Vector3 pos)
+/*    public IEnumerator GoToPoint(Vector3 pos)
     {
         while (true)
         {
@@ -73,13 +77,17 @@ public class AI : MonoBehaviour
             if (pos.x - transform.position.x < -0.1f) horizontalMoving = -1f;
             yield return tick;
         }
-    }
+    }*/
 
-    public IEnumerator Attack(Entity target)
+/*    public IEnumerator Attack(Entity target)
     {
         while (true)
         {
             if (target == null) yield break;
+            if (target.ShelterActor.InShelter)
+            {
+                DefineBehaviour();
+            }
             if (Mathf.Abs(currentPatrolPoint.position.x - transform.position.x) < 1f)
             {
                 entity.AttackController.Hit();
@@ -89,20 +97,80 @@ public class AI : MonoBehaviour
             if (target.transform.position.x - transform.position.x < -0.1f) horizontalMoving = -1f;
             yield return tick;
         }
-    }
+    }*/
 
 
-    IEnumerator SecuritySequence()
+    IEnumerator SentrySequence()
     {
+        Vector3 pos;
+
         while (true)
         {
             if (target != null)
             {
-                yield return StartCoroutine(Attack(target));
+                if (target != null && target.ShelterActor.InShelter)
+                {
+                    DefineBehaviour();
+                }
+                if (target != null && Mathf.Abs(target.transform.position.x - transform.position.x) < 1.4f)
+                {
+                    entity.AttackController.HitPlayer();
+                }
+                if (target != null)
+                {
+                    if (target.transform.position.x - transform.position.x > 0.1f) horizontalMoving = 1f;
+                    if (target.transform.position.x - transform.position.x < -0.1f) horizontalMoving = -1f;
+                }
+                yield return tick;
             }
             else
             {
-                yield return StartCoroutine(GoToPoint(currentPatrolPoint.position));
+                if (Mathf.Abs(spawnCoordinates.x - transform.position.x) > 1f)
+                {
+                    if (spawnCoordinates.x - transform.position.x > 0.5f) horizontalMoving = 1f;
+                    if (spawnCoordinates.x - transform.position.x < -0.5f) horizontalMoving = -1f;
+                }
+                else horizontalMoving = 0f;
+                yield return tick;
+            }
+
+            yield return tick;
+        }
+    }
+
+    IEnumerator SecuritySequence()
+    {
+        Vector3 pos;
+
+        while (true)
+        {
+            if (target != null)
+            {
+                if (target != null && target.ShelterActor.InShelter)
+                {
+                    DefineBehaviour();
+                }
+                if (target != null && Mathf.Abs(target.transform.position.x - transform.position.x) < 1.4f)
+                {
+                    entity.AttackController.HitPlayer();
+                }
+                if (target != null)
+                {
+                    if (target.transform.position.x - transform.position.x > 0.1f) horizontalMoving = 1f;
+                    if (target.transform.position.x - transform.position.x < -0.1f) horizontalMoving = -1f;
+                }
+                yield return tick;
+            }
+            else
+            {
+                pos = currentPatrolPoint.position;
+                if (Mathf.Abs(pos.x - transform.position.x) < 1f)
+                {
+                    NextPatrolPoint();
+                }
+                if (pos.x - transform.position.x > 0.5f) horizontalMoving = 1f;
+                if (pos.x - transform.position.x < -0.5f) horizontalMoving = -1f;
+                yield return tick;
             }
 
             yield return tick;

@@ -9,7 +9,7 @@ public class EnemyVision : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             Debug.Log("Player found");
-            GetComponent<AI>().target = other.GetComponent<Entity>();
+            GetComponentInParent<AI>().target = other.GetComponent<Entity>();
         }
     }
 }

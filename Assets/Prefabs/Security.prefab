@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6049347704812199581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6848141721261262655}
+  - component: {fileID: 305823766768743476}
+  - component: {fileID: 7090367820229369403}
+  m_Layer: 8
+  m_Name: Collisions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6848141721261262655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049347704812199581}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8264323787728345173}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &305823766768743476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049347704812199581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.007263, y: 1.021381, z: 1}
+  m_Center: {x: 1.4913385, y: 0.4596966, z: 0}
+--- !u!114 &7090367820229369403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049347704812199581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d777de775d05b05458f189f817d68456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8264323786445452879
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +103,7 @@ GameObject:
   - component: {fileID: 6039082851139316905}
   - component: {fileID: 1570438009269328145}
   - component: {fileID: 7021081733658082176}
+  - component: {fileID: 633814217417511755}
   m_Layer: 8
   m_Name: Security
   m_TagString: Enemy
@@ -178,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 999
+  dominationReward: 1
   healthValue: 0
 --- !u!114 &7021081733658082176
 MonoBehaviour:
@@ -194,6 +253,19 @@ MonoBehaviour:
   entity: {fileID: 564431331886875438}
   enemyType: 2
   patrolPoints: []
+  target: {fileID: 0}
+--- !u!114 &633814217417511755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d777de775d05b05458f189f817d68456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0

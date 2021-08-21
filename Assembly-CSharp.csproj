@@ -67,6 +67,7 @@
     <Compile Include="Assets\Code\AI.cs" />
     <Compile Include="Assets\Code\AttackController.cs" />
     <Compile Include="Assets\Code\CollisionHandler.cs" />
+    <Compile Include="Assets\Code\EnemyVision.cs" />
     <Compile Include="Assets\Code\Entity.cs" />
     <Compile Include="Assets\Code\GameController.cs" />
     <Compile Include="Assets\Code\GameData.cs" />

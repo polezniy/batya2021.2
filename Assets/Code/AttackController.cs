@@ -26,10 +26,17 @@ public class AttackController : MonoBehaviour
     {
         if (attackProcess || Time.time - lastAttackTime < attackDelay) return;
 
-        StartCoroutine(HitAlgorithm());
+        StartCoroutine(HitAlgorithm("Enemy"));
     }
 
-    IEnumerator HitAlgorithm()
+    public void HitPlayer()
+    {
+        if (attackProcess || Time.time - lastAttackTime < attackDelay) return;
+
+        StartCoroutine(HitAlgorithm("Player"));
+    }
+
+    IEnumerator HitAlgorithm(string targetTag)
     {
         // Сюда засунуть срабатывание анимации
 
@@ -42,13 +49,13 @@ public class AttackController : MonoBehaviour
 
         colliders = Physics.OverlapSphere(hitTarget.position, 0.7f);
 
-        // Удар происходит только по объектам с тегом "Enemy"
+        // Удар происходит только по объектам с нужным тегом
         foreach (Collider item in colliders)
         {
-            Debug.Log("tag = " + item.tag);
-            if (item.CompareTag("Enemy"))
+            if (item.CompareTag(targetTag))
             {
                 Health health = item.GetComponent<Health>();
+                Debug.Log("target : " + targetTag);
                 if (health != null) health.Value -= damage;
             }
         }
