@@ -3834,11 +3834,6 @@ PrefabInstance:
       objectReference: {fileID: 709577515}
     - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
         type: 3}
-      propertyPath: retry
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
-        type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 2085967643}
@@ -4206,6 +4201,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182878461788208459, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4704308950735677690, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
         type: 3}
       propertyPath: retry

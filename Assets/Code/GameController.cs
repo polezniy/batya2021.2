@@ -16,6 +16,11 @@ public class GameController : MonoBehaviour
     {
         gameOverCanvas.enabled = false;
     }
+
+    void Start()
+    {
+        GetComponent<AudioManager>().Play("korridor");
+    }
     void Update()
     {
         // Обновляет текстовые показатели
