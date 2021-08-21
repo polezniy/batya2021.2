@@ -57,12 +57,10 @@ public class PlayerController : MonoBehaviour
         {
             interaction = true;
             target = other.gameObject;
-
         }
         else
         {
             interaction = false;
-            Destroy(target);
         }
     }
 
