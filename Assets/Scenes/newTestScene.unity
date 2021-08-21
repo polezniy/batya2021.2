@@ -3329,31 +3329,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2102236328}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1577348822 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6117065449337889439, guid: a29b47cd0ff4cd245b691d1e514706a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1924052538}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1577348823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577348822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78637d2f3641eb1439b70ad5370edc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: korridor
-    clip: {fileID: 8300000, guid: 92862a8602a572549b756fa531081a2d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
 --- !u!4 &1589420833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 339154465760111583, guid: f48d94e517a9dd945a5189ebc30a0829,
@@ -3859,11 +3834,6 @@ PrefabInstance:
       objectReference: {fileID: 709577515}
     - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
         type: 3}
-      propertyPath: retry
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
-        type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 2085967643}
@@ -4231,6 +4201,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182878461788208459, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4704308950735677690, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
         type: 3}
       propertyPath: retry
