@@ -145,9 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1a6fc7cfff7884cac0497d67d7f2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  domination: 0
+  interaction: 0
   entity: {fileID: 564431331886875438}
+  pushForce: 2
 --- !u!114 &4820220077475407126
 MonoBehaviour:
   m_ObjectHideFlags: 0
