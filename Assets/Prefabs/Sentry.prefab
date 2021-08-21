@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStoresInGameData: 0
-  maxHealth: 2
+  maxHealth: 1
   dominationReward: 1
   healthValue: 0
 --- !u!114 &4466687127393124340

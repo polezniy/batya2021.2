@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.007263, y: 1.021381, z: 1}
-  m_Center: {x: 1.4913385, y: 0.4596966, z: 0}
+  m_Size: {x: 9.018216, y: 1.021381, z: 1}
+  m_Center: {x: 1.4968133, y: 0.4596966, z: 0}
 --- !u!114 &7090367820229369403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 564431331886875438}
   hitTarget: {fileID: 8258430302129701493}
-  damage: 1
+  damage: 2
   attackDelay: 1
   swingDelay: 0.3
 --- !u!114 &1570438009269328145

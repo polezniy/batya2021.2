@@ -221,5 +221,6 @@ public enum EnemyType
 {
     SENTRY,
     STRONGSENTRY,
-    SECURITY
+    SECURITY,
+    HEADMISTRESS
 }
