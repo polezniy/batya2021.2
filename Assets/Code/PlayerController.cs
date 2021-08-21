@@ -24,12 +24,12 @@ public class PlayerController : MonoBehaviour
     {
         // Обновление статов игрока
         GameData.current.health = health;
-        GameData.current.domination = domination;
 
         // Взаимодействие с интерактивными объектами
         if (Input.GetMouseButtonDown(1) && interaction && target.GetComponent<Interactable>().used == false)
         {
             domination += target.GetComponent<Interactable>().domination;
+            GameData.current.domination = domination;
             target.GetComponent<Interactable>().used = true;
         }
 

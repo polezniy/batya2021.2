@@ -28,7 +28,7 @@ public class AI : MonoBehaviour
         DefineBehaviour();
     }
 
-    
+
     void DefineBehaviour()
     {
         Forget();

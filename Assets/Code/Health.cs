@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] float maxHealth;
+    [SerializeField] int dominationReward = 1;
 
     [Header("Info")]
     [SerializeField] float healthValue;
@@ -30,6 +31,13 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+        if (CompareTag("Enemy"))
+        {
+            GameData.current.domination += dominationReward;
+
+        }
+
+
         Destroy(gameObject);
     }
 }
