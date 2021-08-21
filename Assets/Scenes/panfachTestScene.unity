@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3689,6 +3689,7 @@ MonoBehaviour:
   health: {fileID: 73204334}
   domination: {fileID: 709577515}
   block: {fileID: 1101181873}
+  gameOverCanvas: {fileID: 0}
 --- !u!4 &1832022433
 Transform:
   m_ObjectHideFlags: 0
@@ -4120,6 +4121,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182878461788208459, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8258430302129701493, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
         type: 3}
       propertyPath: m_RootOrder
