@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction: 0
   entity: {fileID: 564431331886875438}
+  pushForce: 2
 --- !u!114 &4820220077475407126
 MonoBehaviour:
   m_ObjectHideFlags: 0

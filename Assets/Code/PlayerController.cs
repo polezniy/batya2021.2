@@ -7,16 +7,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool interaction;
     private GameObject target;
+    CharacterController characterController;
 
     [Header("Entity")]
     public Entity entity;
 
     float horizontalInput;
     bool jump;
+    public float pushForce;
 
     public float HorizontalInput { get => horizontalInput; }
     public bool Jump { get => jump; set { jump = value; } }
 
+    void Start()
+    {
+        characterController = GetComponent<CharacterController>();
+    }
     void Update()
     {
         // Взаимодействие с интерактивными объектами
@@ -61,7 +67,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Bam");
             GameData.current.health--;
-
+            Vector3 dist = transform.position - other.transform.position;
+            characterController.Move(dist * pushForce);
         }
     }
 
