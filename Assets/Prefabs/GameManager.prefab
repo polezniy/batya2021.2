@@ -46,3 +46,4 @@ MonoBehaviour:
   health: {fileID: 0}
   domination: {fileID: 0}
   block: {fileID: 0}
+  retry: {fileID: 0}

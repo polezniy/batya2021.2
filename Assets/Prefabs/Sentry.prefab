@@ -364,7 +364,32 @@ PrefabInstance:
     - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5668229
+      objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0051072836
+      objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.017624
+      objectReference: {fileID: 0}
+    - target: {fileID: 984941545768291166, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.0088119805
       objectReference: {fileID: 0}
     - target: {fileID: 984941545768291167, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
         type: 3}

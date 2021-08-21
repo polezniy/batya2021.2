@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class GameController : MonoBehaviour
     public Text domination;
 
     public GameObject block;
+    public Canvas gameOverCanvas;
 
+    void Awake()
+    {
+        gameOverCanvas.enabled = false;
+    }
     void Update()
     {
         // Обновляет текстовые показатели
@@ -21,5 +27,22 @@ public class GameController : MonoBehaviour
         {
             Destroy(block);
         }
+
+        if(GameData.current.health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        gameOverCanvas.enabled = true;
+        gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(restartScene);
+    }
+
+    void restartScene()
+    {
+        //Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("newTestScene");
     }
 }
