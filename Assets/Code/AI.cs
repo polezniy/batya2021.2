@@ -12,7 +12,7 @@ public class AI : MonoBehaviour
     [SerializeField] Transform[] patrolPoints;
 
     float horizontalMoving;
-    Entity target;
+    public Entity target;
     Coroutine currentAlgorithm;
     int currentPatrolPointIndex;
     Transform currentPatrolPoint;

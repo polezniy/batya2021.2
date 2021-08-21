@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 4820220077475407126}
   - component: {fileID: 6039082851139316905}
   - component: {fileID: 1570438009269328145}
+  - component: {fileID: 1932640913942404747}
+  - component: {fileID: 7844311840675102009}
   m_Layer: 8
   m_Name: Sentry
   m_TagString: Enemy
@@ -178,6 +180,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   healthValue: 0
+--- !u!65 &1932640913942404747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.318968, y: 1, z: 1}
+  m_Center: {x: 1.8312216, y: 1.5, z: 0}
+--- !u!114 &7844311840675102009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d777de775d05b05458f189f817d68456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +327,28 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3307606307354130278, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307606307354130278, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 11.94137
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307606307354130278, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 5.4706836
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307606307354130278, guid: c4a5320b5e969bb4d8998b9eabdc7e42,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3307606307354130278, guid: c4a5320b5e969bb4d8998b9eabdc7e42, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c4a5320b5e969bb4d8998b9eabdc7e42, type: 3}
 --- !u!1 &8264323787728345172 stripped
 GameObject:
