@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Обновление статов игрока
-        GameData.current.health = health;
 
         // Взаимодействие с интерактивными объектами
         if (Input.GetMouseButtonDown(1) && interaction && target.GetComponent<Interactable>().used == false)
@@ -51,6 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             if (health < 3) health++;
+            GameData.current.health = health;
         }
 
         if (other.CompareTag("Interactable")) // Взаимодействие с объектами

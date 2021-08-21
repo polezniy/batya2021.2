@@ -87,6 +87,7 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
+    <None Include="Assets\Shaders\CartoonShader.shader" />
     <None Include="Assets\LeanTween\License.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Projects/Unity/batya2021.2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

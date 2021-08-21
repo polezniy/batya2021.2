@@ -14,7 +14,8 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
-        healthValue = maxHealth;
+        if (healthStoresInGameData) GameData.current.health = (int)maxHealth;
+        else healthValue = maxHealth;
     }
 
     public float Value
@@ -29,6 +30,7 @@ public class Health : MonoBehaviour
             if (healthStoresInGameData)
             {
                 GameData.current.health = (int)value;
+                Debug.Log("Now GameData.current.health = " + GameData.current.health);
                 if (GameData.current.health <= 0f) Die();
                 // Экран смерти
             }
@@ -45,13 +47,17 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        if (CompareTag("Enemy"))
+        if (CompareTag("Player"))
+        {
+            Debug.Log("DEATH !!!!!!!!!");
+            // Проигрыш:
+            // Включить анимацию смерти
+            // Вывесит окно проигрыша
+        }
+        else 
         {
             GameData.current.domination += dominationReward;
-
+            Destroy(gameObject);
         }
-
-
-        Destroy(gameObject);
     }
 }
