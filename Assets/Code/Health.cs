@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class Health : MonoBehaviour
 
     [Header("Info")]
     [SerializeField] float healthValue;
+
 
     private void Awake()
     {
@@ -30,7 +33,7 @@ public class Health : MonoBehaviour
             if (healthStoresInGameData)
             {
                 GameData.current.health = (int)value;
-                Debug.Log("Now GameData.current.health = " + GameData.current.health);
+                //Debug.Log("Now GameData.current.health = " + GameData.current.health);
                 if (GameData.current.health <= 0f) Die();
                 // Экран смерти
             }
@@ -43,13 +46,11 @@ public class Health : MonoBehaviour
     }
 
 
-
-
     void Die()
     {
         if (CompareTag("Player"))
         {
-            Debug.Log("DEATH !!!!!!!!!");
+         
             // Проигрыш:
             // Включить анимацию смерти
             // Вывесит окно проигрыша

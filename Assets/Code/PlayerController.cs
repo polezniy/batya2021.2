@@ -5,11 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private int health = 3;
     private bool interaction;
     private GameObject target;
-
-    public int domination;
 
     [Header("Entity")]
     public Entity entity;
@@ -22,12 +19,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         // Взаимодействие с интерактивными объектами
         if (Input.GetMouseButtonDown(1) && interaction && target.GetComponent<Interactable>().used == false)
         {
-            domination += target.GetComponent<Interactable>().domination;
-            GameData.current.domination = domination;
+            GameData.current.domination += target.GetComponent<Interactable>().domination;
             target.GetComponent<Interactable>().used = true;
         }
 
@@ -48,8 +43,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("HealthKit")) // Подбирание аптечки
         {
             Destroy(other.gameObject);
-            if (health < 3) health++;
-            GameData.current.health = health;
+            if (GameData.current.health < 3) GameData.current.health++;
+            GameData.current.health = GameData.current.health;
         }
 
         if (other.CompareTag("Interactable")) // Взаимодействие с объектами
@@ -60,6 +55,13 @@ public class PlayerController : MonoBehaviour
         else
         {
             interaction = false;
+        }
+
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Bam");
+            GameData.current.health--;
+
         }
     }
 
