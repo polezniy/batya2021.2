@@ -43,8 +43,6 @@ public class Health : MonoBehaviour
     }
 
 
-
-
     void Die()
     {
         if (CompareTag("Player"))
