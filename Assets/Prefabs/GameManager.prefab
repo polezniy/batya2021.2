@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6117065449337889409}
   - component: {fileID: 6117065449337889408}
+  - component: {fileID: 1577348823}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,4 +47,23 @@ MonoBehaviour:
   health: {fileID: 0}
   domination: {fileID: 0}
   block: {fileID: 0}
-  retry: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
+--- !u!114 &1577348823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117065449337889439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78637d2f3641eb1439b70ad5370edc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: korridor
+    clip: {fileID: 8300000, guid: 92862a8602a572549b756fa531081a2d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
