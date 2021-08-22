@@ -48,7 +48,12 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        if (CompareTag("Player"))
+        if (CompareTag("Directrisa"))
+        {
+            DialogSystem.current.TurnOnDialog(1);
+            GameData.current.findGameManager().GetComponent<AudioManager>().Play("stolovaya");
+        } 
+        else if (CompareTag("Player"))
         {
          
             // Проигрыш:

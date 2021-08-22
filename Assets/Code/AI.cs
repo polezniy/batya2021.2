@@ -8,7 +8,7 @@ public class AI : MonoBehaviour
     public Entity entity;
 
     [Header("Settings")]
-    [SerializeField] EnemyType enemyType;
+    [SerializeField] public EnemyType enemyType;
     [SerializeField] Transform[] patrolPoints;
 
     [Header("Info")]

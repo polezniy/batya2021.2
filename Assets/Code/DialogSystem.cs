@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogSystem : MonoBehaviour
 {
     // Singleton
-    private static GameData _current;
-    public static GameData current
+    private static DialogSystem _current;
+    public static DialogSystem current
     {
         get
         {
             if (_current == null)
             {
-                _current = new GameData();
+                _current = new DialogSystem();
             }
             return _current;
         }
@@ -34,7 +35,8 @@ public class DialogSystem : MonoBehaviour
 
     private void Awake()
     {
-        TurnOnDialog(0);
+        if (SceneManager.GetActiveScene().name == "Level_1")
+            TurnOnDialog(0);
     }
 
     private void Update()
