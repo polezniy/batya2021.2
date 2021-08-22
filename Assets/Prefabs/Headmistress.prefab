@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 6039082851139316905}
   - component: {fileID: 1570438009269328145}
   - component: {fileID: 4466687127393124340}
+  - component: {fileID: 3149024568345445991}
   m_Layer: 8
   m_Name: Headmistress
   m_TagString: Enemy
@@ -254,6 +255,25 @@ MonoBehaviour:
   enemyType: 1
   patrolPoints: []
   target: {fileID: 0}
+--- !u!95 &3149024568345445991
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fd4308abbfcc43340830593f2913ed6b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9d271daab61ea2b4a95cc08bf3a0497b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,7 +59,7 @@ public class MoveController : MonoBehaviour
 
         if (entity.ShelterActor == null || !entity.ShelterActor.InShelter)
         {
-            tempVector = new Vector3(0f, 0f, -transform.position.z);
+            tempVector = new Vector3(0f, 0f, -1 - transform.position.z);
             characterController.Move(tempVector);
         }
 

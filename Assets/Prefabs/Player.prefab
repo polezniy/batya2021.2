@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 7251973387055834459}
   - component: {fileID: 6039082851139316905}
   - component: {fileID: 4704308950735677690}
+  - component: {fileID: 5996815347170547807}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -292,6 +293,25 @@ MonoBehaviour:
   maxHealth: 3
   dominationReward: 0
   healthValue: 0
+--- !u!95 &5996815347170547807
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264323786551568345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a83385072c98628468d2f0670610a2a5, type: 3}
+  m_Controller: {fileID: 9100000, guid: d75e4945fcd9f1c48b86b5d6263e17fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8278644737354974228
 GameObject:
   m_ObjectHideFlags: 0
