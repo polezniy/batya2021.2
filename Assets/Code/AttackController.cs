@@ -34,7 +34,6 @@ public class AttackController : MonoBehaviour
         if (attackProcess || Time.time - lastAttackTime < attackDelay) return;
 
         StartCoroutine(HitAlgorithm("Player"));
-        GameData.current.findGameManager().GetComponent<AudioManager>().Play("Hurt");
     }
 
     IEnumerator HitAlgorithm(string targetTag)
@@ -47,7 +46,7 @@ public class AttackController : MonoBehaviour
         yield return new WaitForSeconds(swingDelay);
 
         // Сюда засунуть срабатывание звука удара 
-        GameData.current.findGameManager().GetComponent<AudioManager>().Play("Punch");
+
         colliders = Physics.OverlapSphere(hitTarget.position, 0.7f);
 
         // Удар происходит только по объектам с нужным тегом
@@ -58,7 +57,6 @@ public class AttackController : MonoBehaviour
                 Health health = item.GetComponent<Health>();
                 Debug.Log("target : " + targetTag);
                 if (health != null) health.Value -= damage;
-                
             }
         }
 

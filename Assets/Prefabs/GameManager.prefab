@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6117065449337889409}
   - component: {fileID: 6117065449337889408}
-  - component: {fileID: 1577348823}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,83 +46,4 @@ MonoBehaviour:
   health: {fileID: 0}
   domination: {fileID: 0}
   block: {fileID: 0}
-  gameOverCanvas: {fileID: 0}
---- !u!114 &1577348823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117065449337889439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78637d2f3641eb1439b70ad5370edc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: korridor
-    clip: {fileID: 8300000, guid: 92862a8602a572549b756fa531081a2d, type: 3}
-    volume: 0.247
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Jump
-    clip: {fileID: 8300000, guid: 39bd1d3019f245c4facd0282b5ee54a3, type: 3}
-    volume: 0.583
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Punch
-    clip: {fileID: 8300000, guid: e3d41f5a5e9a2f44493b8d2c36c461fc, type: 3}
-    volume: 0.722
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Hurt
-    clip: {fileID: 8300000, guid: de8c0246315b6d64b9d6e75207e6fe77, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: hall
-    clip: {fileID: 8300000, guid: 2eb9c7d19d13234478e729dea728bdc9, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: stolovaya
-    clip: {fileID: 8300000, guid: a107c14bd3deed0478b59e9b7b739514, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: bossfight
-    clip: {fileID: 8300000, guid: fb10846876a29fb44bedfc9b04f23c26, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: bossfight_intro
-    clip: {fileID: 8300000, guid: 2d1ab9f6b8696b94fbd48ced010ac741, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: headreacher
-    clip: {fileID: 8300000, guid: 3aa87f5729e3a6742b73ddd9e0be85cc, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: levelend
-    clip: {fileID: 8300000, guid: 07ed56e4b5dc23a4f93bb56f21a4aa65, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: locker
-    clip: {fileID: 8300000, guid: e79ca67a8221d8a4089363aee4bb1e0d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  retry: {fileID: 0}
