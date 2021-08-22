@@ -9,9 +9,10 @@ using System;
 public class GameController : MonoBehaviour
 {
     public Text health;
-    public Text domination;
+    //public Text domination;
 
     public GameObject block;
+    public Slider dominationSlider;
     public Canvas gameOverCanvas;
     public Canvas pause;
 
@@ -31,12 +32,12 @@ public class GameController : MonoBehaviour
         GetComponent<AudioManager>().Play("korridor");
 
         // Находит нужный текст, если есть
-        if (health == null || domination == null)
+        if (health == null || dominationSlider == null)
         {
             try
             {
                 health = GameObject.Find("Health").GetComponent<Text>();
-                domination = GameObject.Find("Domination").GetComponent<Text>();
+                dominationSlider = GameObject.Find("DominationObject").transform.GetChild(0).GetComponent<Slider>();
             }
             catch
             {
@@ -48,7 +49,8 @@ public class GameController : MonoBehaviour
     void Update()
     {
         // Обновляет текстовые показатели
-        domination.text = "Domination: " + GameData.current.domination;
+        dominationSlider.maxValue = 20;
+        dominationSlider.value = GameData.current.domination;
         health.text = "Health: " + GameData.current.health;
 
         if(Input.GetKeyDown(KeyCode.Escape))
