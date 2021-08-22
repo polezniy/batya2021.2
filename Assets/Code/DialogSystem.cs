@@ -26,6 +26,7 @@ public class DialogSystem : MonoBehaviour
     }
 
     public List<Dialog> dialogs;
+    public GameObject pressAnyKeyText;
     public bool dialogState;
     public int currentDialog;
     public int currentPhrase;
@@ -54,6 +55,7 @@ public class DialogSystem : MonoBehaviour
         dialogState = true;
         currentDialog = index;
         TurnOffAllElements();
+        pressAnyKeyText.SetActive(true);
         if (phraseIndex == 0) currentPhrase = 0;
         dialogs[currentDialog].phrase[phraseIndex].SetActive(true);
     }
@@ -80,6 +82,7 @@ public class DialogSystem : MonoBehaviour
                 phrase.SetActive(false);
             }
         }
+        pressAnyKeyText.SetActive(false);
     }
 }
 

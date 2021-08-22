@@ -185,7 +185,7 @@ MonoBehaviour:
     m_Bits: 512
   model: {fileID: 7201064399996565791}
   groundCheckRadius: 0.3
-  movementSpeed: 2
+  movementSpeed: 3
   jumpStrength: 10
   gravity: -25
   controlByPlayer: 0
