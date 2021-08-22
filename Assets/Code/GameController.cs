@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
+[RequireComponent(typeof(GameController))]
+[RequireComponent(typeof(AudioManager))]
 public class GameController : MonoBehaviour
 {
     public Text health;
@@ -11,6 +14,8 @@ public class GameController : MonoBehaviour
 
     public GameObject block;
     public Canvas gameOverCanvas;
+
+   
 
     void Awake()
     {
@@ -20,6 +25,21 @@ public class GameController : MonoBehaviour
     void Start()
     {
         GetComponent<AudioManager>().Play("korridor");
+
+        // Находит нужный текст, если есть
+        if (health == null || domination == null)
+        {
+            try
+            {
+                health = GameObject.Find("Health").GetComponent<Text>();
+                domination = GameObject.Find("Domination").GetComponent<Text>();
+            }
+            catch
+            {
+                // Выдает сообщение если нет
+                Debug.Log("Не получается обнаружить Health и Domination");
+            }
+        }
     }
     void Update()
     {
@@ -35,14 +55,9 @@ public class GameController : MonoBehaviour
 
         if(GameData.current.health <= 0)
         {
-            Die();
+            gameOverCanvas.enabled = true;
+            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(restartScene);
         }
-    }
-
-    void Die()
-    {
-        gameOverCanvas.enabled = true;
-        gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(restartScene);
     }
 
     void restartScene()
