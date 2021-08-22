@@ -31,6 +31,7 @@ public class ShelterActor : MonoBehaviour
 
     public IEnumerator EnterShelter(Shelter shelter)
     {
+        GameData.current.findGameManager().GetComponent<AudioManager>().Play("locker");
         inShelter = true;
         entity.MoveController.enabled = false;
         LeanTween.cancelAll();
@@ -40,6 +41,7 @@ public class ShelterActor : MonoBehaviour
 
     public IEnumerator ExitShelter()
     {
+        GameData.current.findGameManager().GetComponent<AudioManager>().Play("locker");
         LeanTween.cancelAll();
         LeanTween.moveLocalZ(gameObject, 0f, enterDuration);
         yield return new WaitForSeconds(enterDuration);
