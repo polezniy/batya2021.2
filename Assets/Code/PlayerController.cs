@@ -71,6 +71,11 @@ public class PlayerController : MonoBehaviour
             Vector3 dist = transform.position - other.transform.position;
             characterController.Move(dist * pushForce);
         }
+
+        if (other.CompareTag("Trigger"))
+        {
+            GameData.current.findGameManager().GetComponent<AudioManager>().Play("bossfight");
+        }
     }
 
     public delegate void SimpleEventHandler();

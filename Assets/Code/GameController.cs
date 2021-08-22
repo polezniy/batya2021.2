@@ -28,7 +28,16 @@ public class GameController : MonoBehaviour
     {
         // Receiive the scene
         // Appoint the music
-        GetComponent<AudioManager>().Play("korridor");
+        if(SceneManager.GetActiveScene().name == "Level_1")
+        {
+            GetComponent<AudioManager>().Play("korridor");
+        }
+
+        if(SceneManager.GetActiveScene().name == "Level_2_test")
+        {
+            GetComponent<AudioManager>().Play("bossfight_intro");
+        }
+
 
         // Находит нужный текст, если есть
         if (health == null || domination == null)
