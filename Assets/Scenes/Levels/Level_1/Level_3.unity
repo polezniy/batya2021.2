@@ -837,6 +837,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5095065712457336572, guid: 3ce030f99052e304f873045dc0e98a5c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Directrisa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166016767689936214, guid: 3ce030f99052e304f873045dc0e98a5c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Directrisa
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201064399996565791, guid: 3ce030f99052e304f873045dc0e98a5c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Directrisa
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264323786445452879, guid: 3ce030f99052e304f873045dc0e98a5c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Directrisa
+      objectReference: {fileID: 0}
     - target: {fileID: 8264323786551568345, guid: 3ce030f99052e304f873045dc0e98a5c,
         type: 3}
       propertyPath: m_Name
@@ -896,6 +916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278644737354974228, guid: 3ce030f99052e304f873045dc0e98a5c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Directrisa
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ce030f99052e304f873045dc0e98a5c, type: 3}
