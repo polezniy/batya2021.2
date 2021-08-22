@@ -139,7 +139,7 @@ public class GameController : MonoBehaviour
         if(GameData.current.health <= 0)
         {
             gameOverCanvas.enabled = true;
-            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
+            //gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
             GameData.current.health = 1;
             StopTime();
         }
