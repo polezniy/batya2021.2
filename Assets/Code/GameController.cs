@@ -138,10 +138,10 @@ public class GameController : MonoBehaviour
         // Смерть игрока
         if(GameData.current.health <= 0)
         {
-            StopTime();
             gameOverCanvas.enabled = true;
-            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
+            //gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
             GameData.current.health = 1;
+            StopTime();
         }
     }
 
@@ -149,6 +149,7 @@ public class GameController : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        StopTime();
     }
 
     void StopTime()

@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
-  domination: {fileID: 0}
   block: {fileID: 0}
+  dominationSlider: {fileID: 0}
   gameOverCanvas: {fileID: 0}
   pause: {fileID: 0}
 --- !u!114 &1577348823
@@ -70,13 +70,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 39bd1d3019f245c4facd0282b5ee54a3, type: 3}
-    volume: 0.583
+    volume: 0.429
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Punch
     clip: {fileID: 8300000, guid: c10bbd3027921f540a70380a3f9e29b8, type: 3}
-    volume: 0.722
+    volume: 0.477
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: stolovaya
     clip: {fileID: 8300000, guid: a107c14bd3deed0478b59e9b7b739514, type: 3}
-    volume: 1
+    volume: 0.496
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: bossfight_intro
     clip: {fileID: 8300000, guid: 2d1ab9f6b8696b94fbd48ced010ac741, type: 3}
-    volume: 1
+    volume: 0.232
     pitch: 1
     loop: 1
     source: {fileID: 0}
