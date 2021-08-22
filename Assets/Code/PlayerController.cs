@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             GameData.current.domination += target.GetComponent<Interactable>().domination;
             target.GetComponent<Interactable>().used = true;
+            interaction = false;
         }
 
         if (!entity.ShelterActor.InShelter)
