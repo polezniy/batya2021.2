@@ -8,7 +8,7 @@ public class NextLevel : MonoBehaviour
         // Загрузка следующего уровня при столкновении с игроком
         if (other.CompareTag("Player")) 
         {
-            SceneManager.LoadScene("Level_2");
+            SceneManager.LoadScene("Level_2_test");
         }
     }
 }

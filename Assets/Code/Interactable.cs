@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
     {
         if(used) // Меняет цвет объекта, если он уже был использован
         {
-            if (plakat || vase)
+            if (plakat || vase && used)
             {
                 GetComponentInChildren<SpriteRenderer>().sprite = condition2;
                 if (vase)
@@ -32,12 +32,15 @@ public class Interactable : MonoBehaviour
                     used = false;
                 }
 
-            } else
+            }
+
+            if(botan)
             {
+                Debug.Log("Udar");
                 transform.Rotate(0f,0f,90f);
-                //transform.Translate(-1f, 0f, 0f);
+                transform.Translate(-0.7f, 0f, 0f);
                 GameData.current.findGameManager().GetComponent<AudioManager>().Play("Punch");
-                used = false;
+                botan = false;
             }
             //GetComponent<Transform>().Translate(-0.1f, -0.3f, 0f);
             Destroy(GetComponent<BoxCollider>());
