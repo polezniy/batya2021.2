@@ -48,12 +48,7 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        if (CompareTag("Directrisa"))
-        {
-            DialogSystem.current.TurnOnDialog(1);
-            GameData.current.findGameManager().GetComponent<AudioManager>().Play("stolovaya");
-        } 
-        else if (CompareTag("Player"))
+        if (CompareTag("Player"))
         {
          
             // Проигрыш:
@@ -64,6 +59,15 @@ public class Health : MonoBehaviour
         {
             GameData.current.domination += dominationReward;
             Destroy(gameObject);
+            if (GetComponent<AI>().enemyType == EnemyType.HEADMISTRESS)
+            {
+                Debug.Log("END");
+                DialogSystem.current.TurnOnDialog(1);
+                AudioManager audioManager = GameData.current.findGameManager().GetComponent<AudioManager>();
+                audioManager.Stop("bossfight");
+                audioManager.Play("stolovaya");
+                DialogSystem.current.TurnOnEndTitle();
+            }
         }
     }
 }

@@ -11,10 +11,6 @@ public class DialogSystem : MonoBehaviour
     {
         get
         {
-            if (_current == null)
-            {
-                _current = new DialogSystem();
-            }
             return _current;
         }
         set
@@ -26,15 +22,22 @@ public class DialogSystem : MonoBehaviour
         }
     }
 
+    public GameObject endTitle;
     public List<Dialog> dialogs;
     public GameObject pressAnyKeyText;
     public bool dialogState;
     public int currentDialog;
     public int currentPhrase;
+    bool lockPhraseSwitching;
 
 
     private void Awake()
     {
+        if (_current == null)
+        {
+            _current = this;
+        }
+
         if (SceneManager.GetActiveScene().name == "Level_1")
             TurnOnDialog(0);
     }
@@ -43,7 +46,7 @@ public class DialogSystem : MonoBehaviour
     {
         if (dialogState)
         {
-            if (Input.anyKeyDown)
+            if (!lockPhraseSwitching && Input.anyKeyDown)
             {
                 NextPhrase();
             }
@@ -58,6 +61,7 @@ public class DialogSystem : MonoBehaviour
         currentDialog = index;
         TurnOffAllElements();
         pressAnyKeyText.SetActive(true);
+        StartCoroutine(LockPhraseSwitchingForTime(1f));
         if (phraseIndex == 0) currentPhrase = 0;
         dialogs[currentDialog].phrase[phraseIndex].SetActive(true);
     }
@@ -85,6 +89,19 @@ public class DialogSystem : MonoBehaviour
             }
         }
         pressAnyKeyText.SetActive(false);
+    }
+
+    IEnumerator LockPhraseSwitchingForTime(float delay)
+    {
+        lockPhraseSwitching = true;
+        yield return new WaitForSecondsRealtime(delay);
+        Debug.Log("lockPhraseSwitching = false");
+        lockPhraseSwitching = false;
+    }
+
+    public void TurnOnEndTitle()
+    {
+        endTitle.SetActive(true);
     }
 }
 

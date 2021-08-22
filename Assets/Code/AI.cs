@@ -243,13 +243,12 @@ public class AI : MonoBehaviour
             }
             else
             {
-                pos = currentPatrolPoint.position;
-                if (Mathf.Abs(pos.x - transform.position.x) < 1f)
+                if (Mathf.Abs(spawnCoordinates.x - transform.position.x) > 1f)
                 {
-                    NextPatrolPoint();
+                    if (spawnCoordinates.x - transform.position.x > 0.5f) horizontalMoving = 1f;
+                    if (spawnCoordinates.x - transform.position.x < -0.5f) horizontalMoving = -1f;
                 }
-                if (pos.x - transform.position.x > 0.5f) horizontalMoving = 1f;
-                if (pos.x - transform.position.x < -0.5f) horizontalMoving = -1f;
+                else horizontalMoving = 0f;
                 yield return tick;
             }
 
