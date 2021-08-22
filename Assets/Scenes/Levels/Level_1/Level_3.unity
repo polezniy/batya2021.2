@@ -1946,12 +1946,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d35ca139081f884490fe45a63296cd6, type: 3}
---- !u!223 &1583591755 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 2511329615399293518, guid: 1d35ca139081f884490fe45a63296cd6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1583591754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1621511806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,11 +2045,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[7].volume
+      value: 0.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 0.064
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.347
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.376
+      objectReference: {fileID: 0}
     - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
         type: 3}
       propertyPath: gameOverCanvas
       value: 
-      objectReference: {fileID: 1583591755}
+      objectReference: {fileID: 0}
     - target: {fileID: 6117065449337889409, guid: a29b47cd0ff4cd245b691d1e514706a9,
         type: 3}
       propertyPath: m_LocalPosition.x

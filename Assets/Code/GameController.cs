@@ -33,9 +33,14 @@ public class GameController : MonoBehaviour
             GetComponent<AudioManager>().Play("korridor");
         }
 
-        if(SceneManager.GetActiveScene().name == "Level_2_test")
+        if(SceneManager.GetActiveScene().name == "Level_2")
         {
             GetComponent<AudioManager>().Play("bossfight_intro");
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level_3")
+        {
+            GetComponent<AudioManager>().Play("bossfight");
         }
 
         // Находит нужный текст, если есть

@@ -1414,6 +1414,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 435947858686666878, guid: 80cfae71a069c67439456762000e0a92,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435947858686666878, guid: 80cfae71a069c67439456762000e0a92,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1219830984449315831, guid: 80cfae71a069c67439456762000e0a92,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3323,6 +3333,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[7].volume
+      value: 0.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.477
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577348823, guid: a29b47cd0ff4cd245b691d1e514706a9, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.429
+      objectReference: {fileID: 0}
     - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
         type: 3}
       propertyPath: gameOverCanvas
