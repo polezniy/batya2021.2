@@ -80,8 +80,8 @@ public class GameController : MonoBehaviour
 
     void RestartScene()
     {
-        //Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene("newTestScene");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("scene");
     }
 
     void StopTime()

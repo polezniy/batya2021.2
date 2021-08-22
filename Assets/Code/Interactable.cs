@@ -5,6 +5,7 @@ public class Interactable : MonoBehaviour
     public int domination;
     public bool used;
 
+    public Sprite condition2;
     void Start()
     {
         used = false;
@@ -14,7 +15,10 @@ public class Interactable : MonoBehaviour
     {
         if(used) // Меняет цвет объекта, если он уже был использован
         {
-            GetComponent<Renderer>().material.color = Color.red;
+            GetComponentInChildren<SpriteRenderer>().sprite = condition2;
+            //GetComponent<Transform>().Translate(-0.1f, -0.3f, 0f);
+            Destroy(GetComponent<BoxCollider>());
+            used = false;
         }
     }
 }
