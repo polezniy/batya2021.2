@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("HealthKit")) // Подбирание аптечки
         {
+            GameData.current.findGameManager().GetComponent<AudioManager>().Play("levelend");
             Destroy(other.gameObject);
             if (GameData.current.health < 3) GameData.current.health++;
             GameData.current.health = GameData.current.health;
@@ -70,6 +71,11 @@ public class PlayerController : MonoBehaviour
             GameData.current.health--;
             Vector3 dist = transform.position - other.transform.position;
             characterController.Move(dist * pushForce);
+        }
+
+        if (other.CompareTag("Trigger"))
+        {
+            GameData.current.findGameManager().GetComponent<AudioManager>().Play("bossfight");
         }
     }
 

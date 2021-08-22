@@ -20,8 +20,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        gameOverCanvas.enabled = false;
-        pause.enabled = false;
+
         this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
@@ -29,7 +28,15 @@ public class GameController : MonoBehaviour
     {
         // Receiive the scene
         // Appoint the music
-        GetComponent<AudioManager>().Play("korridor");
+        if(SceneManager.GetActiveScene().name == "Level_1")
+        {
+            GetComponent<AudioManager>().Play("korridor");
+        }
+
+        if(SceneManager.GetActiveScene().name == "Level_2_test")
+        {
+            GetComponent<AudioManager>().Play("bossfight_intro");
+        }
 
         // Находит нужный текст, если есть
         if (health == null || dominationSlider == null)
@@ -45,6 +52,35 @@ public class GameController : MonoBehaviour
                 Debug.Log("Не получается обнаружить Health и Domination");
             }
         }
+
+        if (pause == null)
+        {
+            try
+            {
+                pause = GameObject.Find("Pause").GetComponent<Canvas>();
+
+                pause.enabled = false;
+            }
+            catch
+            {
+                Debug.Log("На сцене нету Pause");
+            }
+        }
+
+        if(gameOverCanvas == null)
+        {
+            try
+            {
+                gameOverCanvas = GameObject.Find("GameOver").GetComponent<Canvas>();
+                gameOverCanvas.enabled = false;
+            }
+            catch
+            {
+                Debug.Log("На сцене нету GameOver");
+            }
+        }
+
+  
     }
     void Update()
     {
