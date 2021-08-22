@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
-[RequireComponent(typeof(GameController))]
 [RequireComponent(typeof(AudioManager))]
 public class GameController : MonoBehaviour
 {
@@ -15,15 +14,18 @@ public class GameController : MonoBehaviour
     public GameObject block;
     public Canvas gameOverCanvas;
 
-   
+    private float fixedDeltaTime;
 
     void Awake()
     {
         gameOverCanvas.enabled = false;
+        this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
     void Start()
     {
+        // Receiive the scene
+        // Appoint the music
         GetComponent<AudioManager>().Play("korridor");
 
         // Находит нужный текст, если есть
@@ -47,22 +49,48 @@ public class GameController : MonoBehaviour
         domination.text = "Domination: " + GameData.current.domination;
         health.text = "Health: " + GameData.current.health;
 
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            StopTime();
+        }
+
         // Уничтожает препятствие перед лестницей, когда игрок достиг 20 доминации
         if(GameData.current.domination >= 20)
         {
-            Destroy(block);
+            // Пробует найти препятствие
+            try
+            {
+                Destroy(GameObject.Find("block"));
+            }
+            catch
+            {
+                Debug.Log("Не могу найти преграду");
+            }
         }
 
+        // Смерть игрока
         if(GameData.current.health <= 0)
         {
             gameOverCanvas.enabled = true;
-            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(restartScene);
+            
+            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
+            StopTime();
         }
     }
 
-    void restartScene()
+    void RestartScene()
     {
         //Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene("newTestScene");
+    }
+
+    void StopTime()
+    {
+        if (Time.timeScale == 1.0f)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1.0f;
+
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
     }
 }

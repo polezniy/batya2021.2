@@ -4084,6 +4084,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 2511329615419942912, guid: 1d35ca139081f884490fe45a63296cd6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511329615419942918, guid: 1d35ca139081f884490fe45a63296cd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778213039608308340, guid: 1d35ca139081f884490fe45a63296cd6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.024988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778213039608308340, guid: 1d35ca139081f884490fe45a63296cd6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 786.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863322310016528657, guid: 1d35ca139081f884490fe45a63296cd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d35ca139081f884490fe45a63296cd6, type: 3}
 --- !u!1001 &6685322284649606494
