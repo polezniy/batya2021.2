@@ -13,12 +13,14 @@ public class GameController : MonoBehaviour
 
     public GameObject block;
     public Canvas gameOverCanvas;
+    public Canvas pause;
 
     private float fixedDeltaTime;
 
     void Awake()
     {
         gameOverCanvas.enabled = false;
+        pause.enabled = false;
         this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
@@ -49,13 +51,29 @@ public class GameController : MonoBehaviour
         domination.text = "Domination: " + GameData.current.domination;
         health.text = "Health: " + GameData.current.health;
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            StopTime();
+            if(pause.enabled == false)
+            {
+                Debug.Log("PAUSE");
+                pause.enabled = true;
+                StopTime();
+
+            } else if (pause.enabled == true)
+            {
+                Debug.Log("RESUME");
+                pause.enabled = false;
+                StopTime();
+            }
+
         }
 
-        // Уничтожает препятствие перед лестницей, когда игрок достиг 20 доминации
-        if(GameData.current.domination >= 20)
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameData.current.health = 0;
+        }
+            // Уничтожает препятствие перед лестницей, когда игрок достиг 20 доминации
+            if (GameData.current.domination >= 20)
         {
             // Пробует найти препятствие
             try
@@ -71,10 +89,10 @@ public class GameController : MonoBehaviour
         // Смерть игрока
         if(GameData.current.health <= 0)
         {
-            gameOverCanvas.enabled = true;
-            
-            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
             StopTime();
+            gameOverCanvas.enabled = true;
+            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(RestartScene);
+            GameData.current.health = 1;
         }
     }
 
