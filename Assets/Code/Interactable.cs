@@ -34,13 +34,13 @@ public class Interactable : MonoBehaviour
 
             }
 
-            if(botan && used)
+            if(botan)
             {
                 Debug.Log("Udar");
                 transform.Rotate(0f,0f,90f);
-                //transform.Translate(-1f, 0f, 0f);
+                transform.Translate(-0.7f, 0f, 0f);
                 GameData.current.findGameManager().GetComponent<AudioManager>().Play("Punch");
-                used = false;
+                botan = false;
             }
             //GetComponent<Transform>().Translate(-0.1f, -0.3f, 0f);
             Destroy(GetComponent<BoxCollider>());
