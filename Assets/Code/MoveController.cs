@@ -40,6 +40,7 @@ public class MoveController : MonoBehaviour
         {
             if (playerController.Jump)
             {
+                
                 if (onGround)
                     yMovement = jumpStrength;
                 else

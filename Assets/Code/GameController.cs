@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -20,6 +21,21 @@ public class GameController : MonoBehaviour
     void Start()
     {
         GetComponent<AudioManager>().Play("korridor");
+
+        // Находит нужный текст, если есть
+        if (health == null || domination == null)
+        {
+            try
+            {
+                health = GameObject.Find("Health").GetComponent<Text>();
+                domination = GameObject.Find("Domination").GetComponent<Text>();
+            }
+            catch
+            {
+                // Выдает сообщение если нет
+                Debug.Log("Не получается обнаружить Health и Domination");
+            }
+        }
     }
     void Update()
     {
