@@ -28,10 +28,10 @@
         {
             half3 normalDir = normalize(s.Normal);
             float ndl = max(0, dot(normalDir, lightDir));
-            if (ndl < 0.25f) ndl = 0;
-            else if (ndl < 0.5f) ndl = 0.25f;
-            else if (ndl < 0.75f) ndl = 0.5f;
-            else ndl = 0.75f;
+            if (ndl < 0.25f) ndl = 0.25f;
+            else if (ndl < 0.5f) ndl = 0.5f;
+            else if (ndl < 0.75f) ndl = 0.75f;
+            else ndl = 1.0f;
 
             fixed3 lightColor = _LightColor0.rgb;
 

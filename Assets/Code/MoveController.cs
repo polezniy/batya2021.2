@@ -23,6 +23,7 @@ public class MoveController : MonoBehaviour
 
     bool onGround;
     float xMovement, yMovement;
+    Vector3 tempVector;
 
 
     private void Awake()
@@ -40,16 +41,26 @@ public class MoveController : MonoBehaviour
             if (playerController.Jump)
             {
                 if (onGround)
+                {
                     yMovement = jumpStrength;
+                    GameData.current.findGameManager().GetComponent<AudioManager>().Play("Jump");
+                }
                 else
                     playerController.Jump = false;
             }
             xMovement = playerController.HorizontalInput * movementSpeed;
+
         }
 
         if (controlByAI)
         {
             xMovement = entity.AI.HorizontalMoving * movementSpeed;
+        }
+
+        if (entity.ShelterActor == null || !entity.ShelterActor.InShelter)
+        {
+            tempVector = new Vector3(0f, 0f, -transform.position.z);
+            characterController.Move(tempVector);
         }
 
         Vector3 movementVector = new Vector3(xMovement, 0f, 0f);
