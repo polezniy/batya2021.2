@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("HealthKit")) // Подбирание аптечки
         {
+            GameData.current.findGameManager().GetComponent<AudioManager>().Play("levelend");
             Destroy(other.gameObject);
             if (GameData.current.health < 3) GameData.current.health++;
             GameData.current.health = GameData.current.health;
