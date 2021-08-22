@@ -72,6 +72,12 @@ public class GameController : MonoBehaviour
         {
             GameData.current.health = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartScene();
+        }
+
             // Уничтожает препятствие перед лестницей, когда игрок достиг 20 доминации
             if (GameData.current.domination >= 20)
         {
@@ -99,7 +105,7 @@ public class GameController : MonoBehaviour
     void RestartScene()
     {
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene("scene");
+        SceneManager.LoadScene(scene.name);
     }
 
     void StopTime()

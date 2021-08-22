@@ -109,6 +109,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   domination: 3
   used: 0
+  vase: 0
+  plakat: 0
+  botan: 1
+  condition2: {fileID: 0}
 --- !u!1001 &1334574007383015660
 PrefabInstance:
   m_ObjectHideFlags: 0

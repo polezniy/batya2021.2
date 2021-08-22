@@ -49,7 +49,7 @@ public class MoveController : MonoBehaviour
                     playerController.Jump = false;
             }
             xMovement = playerController.HorizontalInput * movementSpeed;
-
+            //GameData.current.findGameManager().GetComponent<AudioManager>().Play("steps");
         }
 
         if (controlByAI)

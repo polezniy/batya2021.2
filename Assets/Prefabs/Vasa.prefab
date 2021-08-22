@@ -108,6 +108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   domination: 1
   used: 0
+  vase: 1
+  plakat: 0
+  botan: 0
   condition2: {fileID: -5102931271782188445, guid: 06972e05390656144b38d779c2338b63,
     type: 3}
 --- !u!1 &6059110249078244025

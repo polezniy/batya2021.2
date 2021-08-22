@@ -48,6 +48,7 @@ MonoBehaviour:
   domination: {fileID: 0}
   block: {fileID: 0}
   gameOverCanvas: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!114 &1577348823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +124,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: locker
     clip: {fileID: 8300000, guid: e79ca67a8221d8a4089363aee4bb1e0d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: vasa
+    clip: {fileID: 8300000, guid: 98e67b87a8c8f7241bdcbfa54a42b7a0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: plakat
+    clip: {fileID: 8300000, guid: 56a81d028490156409fa559b45a84b4a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: steps
+    clip: {fileID: 8300000, guid: cbcb9c00e7133784c8cfd9016fcf69f0, type: 3}
     volume: 1
     pitch: 1
     loop: 0
