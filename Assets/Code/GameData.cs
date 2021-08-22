@@ -29,6 +29,7 @@ public class GameData
         }
     }
 
+    // Поппытка найти GameManager
     public GameObject findGameManager()
     {
         try
