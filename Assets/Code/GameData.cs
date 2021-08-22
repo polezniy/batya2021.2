@@ -28,4 +28,17 @@ public class GameData
             }
         }
     }
+
+    public GameObject findGameManager()
+    {
+        try
+        {
+            return GameObject.Find("GameManager");
+        }
+        catch
+        {
+            Debug.Log("Не могу найти GameManager");
+            return null;
+        }
+    }
 }

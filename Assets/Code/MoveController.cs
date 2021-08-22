@@ -40,13 +40,16 @@ public class MoveController : MonoBehaviour
         {
             if (playerController.Jump)
             {
-                
                 if (onGround)
+                {
                     yMovement = jumpStrength;
+                    GameData.current.findGameManager().GetComponent<AudioManager>().Play("Jump");
+                }
                 else
                     playerController.Jump = false;
             }
             xMovement = playerController.HorizontalInput * movementSpeed;
+
         }
 
         if (controlByAI)

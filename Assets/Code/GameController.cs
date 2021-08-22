@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
+[RequireComponent(typeof(GameController))]
+[RequireComponent(typeof(AudioManager))]
 public class GameController : MonoBehaviour
 {
     public Text health;
@@ -12,6 +14,8 @@ public class GameController : MonoBehaviour
 
     public GameObject block;
     public Canvas gameOverCanvas;
+
+   
 
     void Awake()
     {
@@ -51,14 +55,9 @@ public class GameController : MonoBehaviour
 
         if(GameData.current.health <= 0)
         {
-            Die();
+            gameOverCanvas.enabled = true;
+            gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(restartScene);
         }
-    }
-
-    void Die()
-    {
-        gameOverCanvas.enabled = true;
-        gameOverCanvas.GetComponentInChildren<Button>().onClick.AddListener(restartScene);
     }
 
     void restartScene()

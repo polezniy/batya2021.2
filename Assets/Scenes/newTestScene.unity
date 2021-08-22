@@ -3045,6 +3045,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 6561845519630323575, guid: 4e1022bfa566e0140afadf9217e10d9b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561845519630323575, guid: 4e1022bfa566e0140afadf9217e10d9b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8264323786551568345, guid: 4e1022bfa566e0140afadf9217e10d9b,
         type: 3}
       propertyPath: m_Name
@@ -3800,16 +3810,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
         type: 3}
-      propertyPath: health
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
-        type: 3}
-      propertyPath: domination
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117065449337889408, guid: a29b47cd0ff4cd245b691d1e514706a9,
-        type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 2085967643}
@@ -4256,6 +4256,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264323787728345162, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500678180760800852, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9,
+        type: 3}
+      propertyPath: pushForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0b80a0ec140d5b4e8bf01b5b76ce8a9, type: 3}
